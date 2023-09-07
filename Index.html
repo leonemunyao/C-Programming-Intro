@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming</title>
+</head>
+<body>
+    <h1>What is C</h1>
+    <p>Its an imperative procedural language. All the code has to be inside a function. C files are the source code of your program.
+        You have to compile the C files with a compiler like gcc to make an executable file.
+    </p>
+    <h2>COmments</h2>
+    <p>In C we use /* and end with */</p>
+    <h2>Variables</h2>
+    <p>Here we have data types and integer types which are the following and each has a storage size it takes</p>
+    <ul>
+        <li>char.....1byte...(-128 to 127)</li>
+        <li>unsigned char....1byte....(0 to 255)</li>
+        <li>short.....2bytes....(-32768 to 32767)</li>
+        <li>unsigned short .....2bytes......(0 to 65535)</li>
+        <li>int....4bytes....(-2,147,483,648 to 2,147,483,647)</li>
+        <li>unsigned int...4bytes......(0 to 4,294,967,295)</li>
+        <li>long....8bytes....(−9,223,372,036,854,775,808 to 9,223,372,036,854,775,807)</li>
+        <li>unsigned long....8bytes.....(0 to 18,446,744,073,709,551,615)</li>
+    </ul>
+    <p>Variables have a Declaration too like for example ....type var_name;  or ...int i;.....or char c;</p>
+    <h2>Arrays</h2>
+    <p>An array is a succession of items of the same type in memory...example I can say ......
+     int my_array[35]....or ...char my_array_arrays[16][32]</p>
+     <h2>Structures</h2>
+     <p>This is a complex data type declaration that defines a physically grouped list of variables to be placed under one name in 
+        a block memory......cretion and declarion is as follows...
+        <br>
+        <br>
+        struct structure_name{
+            type name;
+            [...] 
+        };
+        struct structure_name var_name;
+        <br>
+        <br>
+        struct new_struct{
+            int a;
+            char b[32];
+        }
+        struct new_struct s;
+     </p>
+     <br>
+     <br>
+     <h1>Functions, Programs</h1>
+     <p>A program is a collection of functions. A function is a sequence of program instructions that perform a specific task 
+        The syntax is as follows..
+        <br>
+        return_type function_name(type param, type2 param2 [...])
+        [block]
+        <br>
+        example
+        <br>
+        int func(int a, char c)
+        [block]
+     </p>
+     <br>
+     <h2>The Entry Point</h2>
+     <p>Note that programs begin with an entry point.....In C the entry point is main function. From the main function you can call 
+        all other functions. When the main returns the program stops. ...
+        <em>int main(void)......int main(int ac, char **av)</em>
+     </p>
+     <h2>Blocks</h2>
+     <p>They are sections of codes that are grouped together. They are delimited  by curly braces.....syntax 
+        <br>
+        {
+            [declaration(s)]
+
+            [statements(s)]
+        }
+        <br>
+        example
+        <br>
+        int func(int a, int b)
+        {
+            /* declarations */
+            int mull; 
+            int sum;
+            int result;
+
+            /* statements */
+            mull = a * b;
+            sum = a + b;
+            result = mul + sum;
+            return(result);
+        }
+     </p>
+     <br>
+     <h1>instructions and Expressions</h1>
+     <p>Expression followed by a semicolon indicates the end of one logical entity...They always have a value
+        Types f expressions are......Basic expressions(arithmetic opertaions)....Affectations(assigning a value to a variable)
+        ......Comparisons(checking the equality of values).....Logical Operations(checking whether tow things are the same).....
+        Binary Opertaions.
+     </p>
+     <br>
+     <h2>Characters</h2>
+    <p>They are inside single quotes. The value of a character is its ASCII code(man ascii)</p>
+    <h2>Strings</h2>
+    <p>They are inside double quotes</p>
+    <h2>Affectations</h2>
+    <p>Their syntax as follows....... var_array[expressions] = expression;
+                              ....... var_struct.field_name = expression;
+    </p>
+    <h2>Variable assignment  | example</h2>
+    <p>
+        int add(int a, int b, int c)
+        {
+            int result;
+
+            result a +  b + c;
+            [...]
+        }
+        int main()
+        {
+            int a;
+            int b;
+            
+            b = 98;
+            a = 1 + 2 + 3 * 4 - 1;
+            b = 23 +add(32, a, a + b);
+            [...]
+        }
+    </p>
+    <br>
+    <br>
+    <h1>Control Structures</h1>
+    <p>Here we have .....if.... and if else statements.... </p>
+    <h3>while loops</h3>
+    <p>syntax.....
+        while(expression)
+          [block]
+          <br>
+       While loop lets you repeat a block a specified expression becomes false.
+       <br>
+       <br>
+       int array_var[98];
+       int i;
+       
+       i = 0;
+       while (i < 98)
+       {
+          array_var[i] = 1337;
+          i++;
+       }
+    </p>
+    <h3>for loops</h3>
+    <p>This one lets you repeat a block a specified number of times. Its executed until the optional condition becomes false.
+         The syntax is as follows.....for(initialize; condition; update)
+                                          [block]
+        example
+        <br>
+        int array_var(98);
+        int i;
+        
+        for(i = 0; i < 98; i++)
+        {
+            array_var[i] = 1337;
+        }
+    </p>
+</body>
+</html>
