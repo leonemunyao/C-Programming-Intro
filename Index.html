@@ -10,7 +10,7 @@
     <p>Its an imperative procedural language. All the code has to be inside a function. C files are the source code of your program.
         You have to compile the C files with a compiler like gcc to make an executable file.
     </p>
-    <h2>COmments</h2>
+    <h2>Comments</h2>
     <p>In C we use /* and end with */</p>
     <h2>Variables</h2>
     <p>Here we have data types and integer types which are the following and each has a storage size it takes</p>
@@ -30,7 +30,7 @@
      int my_array[35]....or ...char my_array_arrays[16][32]</p>
      <h2>Structures</h2>
      <p>This is a complex data type declaration that defines a physically grouped list of variables to be placed under one name in 
-        a block memory......cretion and declarion is as follows...
+        a block memory......creation and declarion is as follows...
         <br>
         <br>
         struct structure_name{
@@ -80,21 +80,21 @@
         int func(int a, int b)
         {
             /* declarations */
-            int mull; 
+            int mul; 
             int sum;
             int result;
 
             /* statements */
-            mull = a * b;
+            mul = a * b;
             sum = a + b;
             result = mul + sum;
             return(result);
         }
      </p>
      <br>
-     <h1>instructions and Expressions</h1>
+     <h1>Instructions and Expressions</h1>
      <p>Expression followed by a semicolon indicates the end of one logical entity...They always have a value
-        Types f expressions are......Basic expressions(arithmetic opertaions)....Affectations(assigning a value to a variable)
+        Types of expressions are......Basic expressions(arithmetic opertaions)....Affectations(assigning a value to a variable)
         ......Comparisons(checking the equality of values).....Logical Operations(checking whether tow things are the same).....
         Binary Opertaions.
      </p>
@@ -136,7 +136,7 @@
         while(expression)
           [block]
           <br>
-       While loop lets you repeat a block a specified expression becomes false.
+       While loop lets you repeat a block until a specified expression becomes false.
        <br>
        <br>
        int array_var[98];
@@ -163,5 +163,53 @@
             array_var[i] = 1337;
         }
     </p>
+
+    <h1>Keywords and Identifiers</h1>
+    <h2>Keywords</h2>
+    <p>Some of the keywords in C programmng include the following......auto, break, if, while, int, else, struct, long, float, 
+        static, char, register, return, signed, sizeof, goto, void, unsigned, enum, typedef, switch and many more. The new ones are 
+        volatile, const, void and signed.
+    </p>
+    <h2>Identifiers</h2>
+    <p>Its a fancy term used to mean name in C. The only restriction is that an identifier must start with an alphabetic character</p>
+    <br>
+    <br>
+    <h1>Intergral Types.</h1>
+    <p>We start by looking at various types of integers then their conversion rules.</p>
+    <h2>Plain Integers</h2>
+    <p>The most obvious one is <em>signed int</em> and the less obvious one is <em>unsigned int</em>.</p>
+    <h2>Character Variables</h2>
+    <p>This is simply the char. A char is just an integer.....Example of char is as below..........
+        <br>
+        <br>
+
+        include <limits.h>
+        include <stdio.h>  
+        include <stdlib.h> 
+         
+        main(){
+            char c;
+
+            c = CHAR_MIN;
+            while(c != CHAR_MIN){
+                print("%d\n", c);
+                c = c+1;
+            }
+              exit(EXIT_SUCCESS); 
+        }    
+    </p>
+    <br>
+    <br>
+    <h1>If Statements in C</h1>
+    <p>Without a conditional staement such as if statements ....programs would run almost the same way every time. Lets check the difference 
+        between TRUE and FALSE. A TRUE statement equal to a nonzero number while a FALSE statements equla to zero. The operator returns 1 if
+        the condition is true and returns 0 is the condition is false.
+    </p>
+    <h3>Basic if statements</h3>
+    <p>
+        if(the statement is true)
+         Execute this line of code
+    </p>
+
 </body>
 </html>
