@@ -198,6 +198,53 @@
               exit(EXIT_SUCCESS); 
         }    
     </p>
+    <p>Its useful to be able to read characters in a program.The library function <em>getchar</em> is used for the job ....It 
+    reads characters in a program and returns an int value which is stored in the char.</p>
+    <br>
+    <br>
+         <h1>More Complicated Types</h1>
+         <p>For serious systems programming they are just aren't adequete in the precision of control over storage that 
+            they provide and behaviour that they follow. To correct this problem C provides extra Intergral types. They are 
+            split into two categories ..... <em>signed and unsigned</em>. Signed are capable of being negative while unsigned
+            cannot be negative at any time. unsigned also have a special character of not overflowing in arithmetic.
+            <br>
+            <br>
+            #include <stdio.h>
+                #include <stdlib.h>
+                main(){
+                      unsigned int x;
+                      x = 0;
+                      while(x >= 0){
+                              printf("%u\n", x);
+                              x = x+1;
+                      }
+                
+                      exit(EXIT_SUCCESS);
+                }
+                <br>
+                <br>
+            For both signed and unsigned we have three subtypes, <em>short, ordinary and long.</em> Taking those into account, here is a 
+            list of possible Intergral types in C....
+            <ul>
+                <li><em>unsigned short int</em></li>
+                <li><em>unsigned int</em></li>
+                <li><em>unsigned long int</em></li>
+                <li><em>signed short int</em></li>
+                <li><em>signed int</em></li>
+                <li><em>signed long int</em></li>
+            </ul>  
+            <br>
+            The last three signed are unnecessary since int types are signed types anyway. The only character types are signed
+            and unsigned.  
+         </p>
+    <br>
+    <br>
+    <h1>Printing Intergral Types</h1>
+    <p>You can use printf to print these various types. Character variables work exactly the same way as Intergral variables. 
+        ......%c for char.....%d for decimal signed int, short and char..............%u for decimal unsigned int, short and char......
+        ..%x for hexadecimal int, short and char .........%o for octo int, short and char.......%ld for decimal signed long......
+        ....%lu %lx & %lo for as aboves but for longs
+    </p>
     <br>
     <br>
     <h1>If Statements in C</h1>
