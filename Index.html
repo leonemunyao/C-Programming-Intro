@@ -329,5 +329,50 @@
         a pointer
         int *var;
      </p>
+     <br>
+     <br>
+     <h1>Arrays</h1>
+     <p>A variable is a name given to a storage area that our programs can manipulate.</p>
+     <h1>Lvalues and Rvalues</h1>
+     <p>There are two kinds of expressions in C. lvalue are expressions that refer to a memory location. Rvalue refers to a data 
+        value that is stored at some address in a memory. Variables are lvalues and so they may appear on he left-hand side of 
+        an assignment.
+     </p>
+     <br>
+     <br>
+     <h2>C Constants and Literals</h2>
+     <p>Constant refer to a fixed value that a program may not alter. Constants are also called Literals. They can be any type 
+        of data type that is integer, character , float and string literals.  
+     </p>
+     <h2>Defining Constants</h2>
+     <p>There are two simple ways in C to define constants. 
+        <ul>
+            <li>Using #define preprocessor</li>
+            <li>Using const keyword</li>
+        </ul>
+     </p>
+     <h1>The C Storage Classes</h1>
+     <p>A storage class defines the scope(visibility) and life-time of variables or functions within C programs. The four different
+        storage classes in C Program
+        <ul>
+            <li>auto</li>
+            <li>register</li>
+            <li>static</li>
+            <li>extern</li>
+        </ul>
+     </p>
+     <h3>The Auto Storage Class</h3>
+     <p>Is the default storage class for all local variables. Can only be used within two functions. </p>
+     <h3>The Register Storage Class</h3>
+     <p>The register class is used to define local variables that should be stored in a register other than RAM. This means that 
+        the variable has a maximum size equal to the register size. The register should only be used for variable which require quick
+        access.
+     </p>
+     <h2>The Static Storage</h2>
+     <p>The static class storage instructs the compile to keep a local variable in existence during the life-time of the program 
+        instead of creating and destroying it each time. Therefore making local variable static allows them to maintain their value 
+        between function calls. In C Programming when static is used on global variable, it causes only one copy of that member to be
+        shared by all the objects of that class. 
+     </p>
 </body>
 </html>
