@@ -321,15 +321,27 @@
         of that variable. The size of a type will determine how many different possible values of a variable of this type can hold. When we declare a 
         variable the computer will reserve the right amount of space for the variable in the memory. 
      </p>
+     <p>The size of a type will determine how many different possible values of a variable of this type can hold. For instant a char variable 
+        could only hold 256 different values from -128 to 127. And because the size of int is 4bytes so 32, an int value can hold 2^32 different
+        possible values. The space reserved for the variable is its address. And when we assign a value to this variable the computer will store
+        the value this value at its address. Note that a byte can only store numbers. So if its a string lets say 'H',  its ascii code which is 
+        72 is stored there. In order to know what is the address of a variable, you can use the "address-of unary operator" &. You can use %p to
+        print addresses(the values of pointers) with printf. 
+     </p>
      <br>
      <br>
      <h1>Storing Memory Addresses</h1>
-     <p>Now that we know how to get an address, we can store it iin a pointer. A pointer is simply the address of a piece of data
+     <p>Now that we know how to get an address, we can store it in a pointer. A pointer is simply the address of a piece of data
         . Like any other variable it needs to be declared. The general form is var_type *var; The star tell the variable var is
-        a pointer
-        int *var;
+        a pointer, that points to var_type. The value of var will be a memory address holding a value of type var_type 
+        int *ptr; In this example the ptr is the name of the variable of type "pointer to an integer" 
      </p>
      <br>
+     <br>
+     <h1>Dereferencing</h1>
+     <p>The real power of integers is that they can manipulate values stored at the memory address they point to. This is called dereferencing
+        . To do this you can use the dereference 
+     </p>
      <br>
      <h1>Arrays</h1>
      <p>A variable is a name given to a storage area that our programs can manipulate.</p>
@@ -397,6 +409,18 @@
      <h4>Logical Operators</h4>
      <p>They include ..&&, ||, !</p>
      <h4>Bitwise Operator</h4>
-     <p></p>
+     <p>Bitwise operator works on bit-by-bit operation. The truth table for &, | and ^ is as follows...
+      The bitwise operators supported in C are &, |, ^,      
+     </p>
+     <h3>Back to ?: operator</h3>
+     <p>The format is as follows...if Exp1 is true, Exp2 is evaluated and if Exp1 is false Exp3 is evaluated. Exp1 ? Exp2 : Exp3</p>
+     <h2>C Loops</h2>
+     <p>A Loop allows us to execute a statement or a group of statements muiltiple times. Types of loops in C Programming language are
+        while loop, for loop, do....while loop and nested loops. 
+     </p>
+     <br>
+     <br>
+      <h1>Pointer to Pointer</h1>
+      <p>A pointer is a form of multiple indirection or a chain of pointers. </p> 
 </body>
 </html>
