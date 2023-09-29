@@ -422,5 +422,54 @@
      <br>
       <h1>Pointer to Pointer</h1>
       <p>A pointer is a form of multiple indirection or a chain of pointers. </p> 
+      <br>
+      <br>
+      <h1>Recursion</h1>
+      <h3>Iterative Programming</h3>
+      <p>This is the repetition of a block of statements in a computer program using a loop</p>
+      <br>
+      <p>Recursion is a method where the solution to a problem depends on the solution to smaller instances of the same problem
+        A recursive finction is a function that calls itself 
+      </p>
+      <br>
+      <br>
+      <h1>Building and Using Static and Shared C Libraries</h1>
+      <p>One of the problems with developed programs is that they tend to grow larger and larger with time hence bringing about
+        larger compilation files. 
+      </p>
+      <h2>What is a C library and What can it do?</h2>
+      <p>A library is a file containing several object files that can be used as a single entity in a linking phase of a program
+        . We have Static Libraries and dynamic Libraries. Static libraries are a collection of object files that are linked in the program
+        during the linking phase of compilation and are not relevant during runtime. Dynamic Libraries also called shared libraries are 
+        linked in the program in two stages. First during compile time, the linker verifies that all symbols required by the program are 
+        linked into the program or one of its shared libraries. These sysmbols are again, functions, variables and the like. However the
+        object files from the dynamic library are not inserted in the executable file, instead when a proram is started, a program system
+        called the dynamic loader checks out which shared libraries are linked with the program, loads to the memory and attaches them 
+        the copy of the program in the memory.  
+      </p>
+      <h2>Creating a Static C library using "ar" and "ranlib"</h2>
+      <p>The basic tool used to create static libraries is a program called 'ar', for 'archiver'. In order to create a static library, we
+        can use a command like this '<em>ar rc libutil.a util_file.o util_net.o util_math.o ....This command creates a static library 
+            called 'libutil.o' and puts copies of the object files 'util_file.o', util_math.o and util_net.o in them. 
+        </em>'. After the archive is created or modifies there ia a need to index. The comand used to create or update the index is 
+        called ranlib and is used as follows. <em>'ranlib libutil.a'</em>. 
+      </p>
+      <h2>Using a C Library in A Program</h2>
+      <p>After we created our archive we want to use it in our program, this is done by adding the library's name to the list of 
+        object file names given to the linker using a speacial flag normally ' -l '. Example..... <em>'cc main.o -l. -lutil -o prog'</em>
+        This will create a program using object file 'main.o' and any other sysmbols it rquires from the 'util' static library.  
+      </p>
+       <br>
+       <br>
+      <h2>Creating A Shared 'C' Library using 'ld'</h2>
+      <p>Compile list files then insert </p>
+      <br>
+      <br>
+      <h2>Arguments to main</h2>
+      <p>For those writing programs which will run in a hosted environment, arguments provide a useful opportunity to give parameters
+         to programs. Typically this facility is used to direct the way the program goes about its task. Its particularly common to
+         provide file names to a program through its arguments. The declaration of main looks like this.......  int main(int argc, char 
+         *argv). This indicates that the main is a function that returns a integer. There are atleast two arguments in main which are 
+      </p>
 </body>
 </html>
