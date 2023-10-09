@@ -471,5 +471,101 @@
          provide file names to a program through its arguments. The declaration of main looks like this.......  int main(int argc, char 
          *argv). This indicates that the main is a function that returns a integer. There are atleast two arguments in main which are 
       </p>
+      <h1>Object-like Macros</h1>
+      <p>An object-like macro is a simple identifier which will be replaced by a code fragment. It looks like a data object in the code. They are most 
+        commonly used to give symbolic names to numeric constants. You create macros with the #define directive. #define is followed by the name of the 
+        macro and then the token sequence it should be an abbreviation for, which is variously refered to as macro body, expansion or replacement list. 
+        for example <em>
+            #define BUFFER_SIZE 1024
+        defines a macro named BUFFER_SIZE as an abbreviation for the token 1024. If somewhere after this #define directive there comes a C statement
+        of the form .....
+        <br>
+        foo = (char *) malloc (BUFFER_SIZE); 
+        <br>
+        then the C processor will recognise and expand the macro BUFFER_SIZE. The C compiler will see the same token as it would be if it was written as
+        <br>
+        foo = (char *) malloc (1024);
+        <br>
+        By convention macro names are written in uppercase.
+        </em>
+        <br>
+        Macro's body ends at the end of the #define line. You may continue the defination into multiple lines, if necessary, using backslash-newline.
+        When macro is expanded however it will come out on one line....for example 
+        <br>
+        <em>
+            #define NUMBERS 1, \
+                            2, \
+                            3
+            int x[] = {NUMBERS};
+              ==> int x[] = {1, 2, 3}; 
+        </em>
+        <br>
+        The common visible consequences of this is surprising line numbers in error messages. Macro definations take effect at the place you write them
+        . Therefore the following input to the C Processor 
+        <br>
+        <em>
+            foo = x;
+            #define x 4
+            bar = x;
+        </em>
+        <br>
+        produces 
+        <br>
+        <em>
+            foo = x;
+            bar = 4;
+        </em>
+        <br>
+        When the preprocessor expands the macro name, the macro name expansion replaces the macro invocation, then the expansion is examined for more 
+        macros to expand....for example
+        <em>
+            #define TABLESIZE BUFSIZE
+            #define BUFSIZE 1024
+            TABLESIZE
+               ==> BUFSIZE
+               ==> 1024
+        </em>
+        TABLESIZE is expanded first to produce BUFSIZE, then that macro is expanded to produce final result, 1024.
+      </p>
+      <br>
+      <h1>Macro Arguments</h1>
+      <p>Function-like macros can take arguments, just like true functions. To define a macro that uses arguments, you insert parameters between the 
+        pair of paranthesis in the macro defination that make the macro function-like. The parameters must be valid C identifiers, separated by commas and optionally
+        white space. To invoke a macro that takes arguments, you write the name of the macro followed by a list of actual arguments in paranthesis, separated by commas
+        . It can cross many lines in the source file as you wish. The number of arguments you give must match the number of parameters in the macro definition. When
+        the macro is expanded, each use of a parameter in its body is replaced by the tokens of the corresponding arguments.
+        Here is an example of a macro that computes the minimum of two numerical values, as it is defined in many C programs and some uses.
+        <br>
+        <br>
+        <em>
+            #define min(X, Y) ((X) <  (Y) ? (X) : (Y))
+            x = min(a, b);          ==> x = ((a) < (b) ? (a) : (b));
+            y = min(1, 2);          ==> y = ((1) < (2) ? (1) : (2));
+            z = min(a + 28, *p);    ==> z = ((a + 28) < (*p) ? (a + 28) : (*p));
+        </em> 
+        <br>
+        In this small exmple you can already see several of the dangers of macro arguments. 
+        <br>
+        Leading and trailing whitespace in each argument is dropped and all the whitespace between tokens of an argument is reduced to a single space. Paranthesis
+        within each argument must balance, a comma within within such paranthesis does not end the argument. However, there is no requirement for square brackets
+        or braces to balance and they do not prevent a comma from separating arguments. Thus,
+        <br>
+        <em>
+            macro (array[x = y, x + 1])     .....passes two arguments to macro: array[x = y and x + 1]. If you want to supply array[x = y, x + 1] as an argument, 
+            you can write it as array[(x = y, x + 1)] which is equivalent  to C code. All arguments to a mcro are completely macro-expanded before they are substituted
+            into the macro body. After substitution, the complete text is scanned again for macros to expand,including the arguments. This rule may seem strange but
+            it is carefully designed.
+            <br>
+            For example ... min(min(a, b), c) is first expanded to .... min(((a) < (b) ? (a) : (b)), (c))......then to .....
+            (((a) < (b) ? (a) : (b)) < (c) ? (((a) < (b) ? (a) : (b))) : (c))
+        </em>
+        <br>
+        Line breaks shown for clarity would not actually be genarated.
+      </p>
+      <h1>Pre-Processor Directives in C</h1>
+      <p>The C Pre Processor is not part of the compiler but its a step executed before the source code is compiled. The pre-processor can replace tokensin the
+        , insert contents of other files into the source file or suppress compilation of part of the file by removng sections of text. The two pre-processor 
+        directves are #define and #ifdef 
+      </p>
 </body>
 </html>
