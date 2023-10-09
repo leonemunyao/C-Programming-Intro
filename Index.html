@@ -567,5 +567,93 @@
         , insert contents of other files into the source file or suppress compilation of part of the file by removng sections of text. The two pre-processor 
         directves are #define and #ifdef 
       </p>
+      <br>
+      <h1>The C Pre-Processor</h1>
+      <p>The C Pre-Processor modifies the source code file before handing it over to the compiler. There are essentially three uses of pre-processor directives,
+         constants and macros. Directives are commands that tell the pre-processor to skip part of a file, include another file or define a constant or macro. 
+         Directives always begin with a sharp sign(#) .
+      </p>
+      <br>
+      <h2>Header Files</h2>
+      <p>The #include directive tells the pre-processor to grab the text of a file and place it directly into the current file. Typically, such statements are
+        placed at the top of a program hence the name header files. 
+      </p>
+      <h3>Conditional Compliation</h3>
+      <p>There are a whole set of options that can be used to determine whether the processor will remove lines of code before handing the file to the compiler.
+        They include #if #else #ifdef and #ifndef
+      </p>
+      <h3>Include Guards</h3>
+      <p>Another common problem is that a header file is required in multiple other header files that are later included into a source code file, with the
+        result often being that variables, structs, classes or functions appear to be defined multiple times. 
+      </p>
+      <br>
+      <h3>Macros</h3>
+      <p>The other major use of preprocessor is to define macros. The advantage of a macro is that it can be type-neutral and its inlined directly into the 
+        code, so there isn't any function call overhead. A macro definition is always of the following form. 
+        <br>
+        <em>
+            #define MACRO_NAME(arg1, arg2,...) [code to expand].............for instant a simple increment macro might look like this; ......
+            <br>
+            #define INCREMENT(x) x++
+        </em>
+      </p>
+      <br>
+      <br>
+      <h1>Structures in C Programming</h1>
+      <p>A structure is a user  defined data type available in C that allows to combine data items of different kinds. 
+        <br>
+        Structure declaration
+        <br>
+        <em>
+            struct User
+            {
+                char *name;
+                char *email;
+                int age;
+            };
+
+            int main(void)
+            {
+                struct User user;
+                user.name = "Foo Bar";
+                user.email = "foobar.io";
+                user.age = 22;
+                return (0);
+            }
+        </em>
+        To access elements of a pointer to a structure, you have to dereference the pointer and then access to the data using the '.' symbol. 
+      </p>
+      <br>
+      <h1>typedef</h1>
+      <p>In C programming we have the keyword typedef which you can use to give a type a new name. After you type defination, the identifier byte can be used 
+        as an abbreviation for type unsigned char like in the example.... 
+        <br>
+        typedef unsigned char byte;
+
+        int main(void)
+        {
+            byte c;
+
+            c = 200;
+            return (0);
+        }
+        <br>
+        You can also use typedef with structures to define a new data type 
+        <br>
+        struct Computer
+        {
+            char *name;
+            char *brand;
+        };
+
+        typedef struct Computer Computer
+        <br>
+        <br>
+        typedef struct Computer
+        {
+            char *name;
+            char *brand;
+        } Computer;
+      </p>
 </body>
 </html>
